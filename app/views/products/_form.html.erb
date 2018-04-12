@@ -1,0 +1,67 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cd_title %>
+    <%= form.text_field :cd_title, id: :product_cd_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :artist %>
+    <%= form.text_field :artist, id: :product_artist %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture_id %>
+    <%= form.text_area :picture_id, id: :product_picture_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sound_source %>
+    <%= form.text_area :sound_source, id: :product_sound_source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :product_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :label %>
+    <%= form.text_field :label, id: :product_label %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genre %>
+    <%= form.text_field :genre, id: :product_genre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stock %>
+    <%= form.number_field :stock, id: :product_stock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, id: :product_start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_flg %>
+    <%= form.check_box :product_flg, id: :product_product_flg %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
