@@ -1,11 +1,11 @@
 class CartItemsController < ApplicationController
 #createで、.newと.saveを同時に行ってしまう　paramsは、idだとは限らない
 def create
-	product = params[:product_id]
+	product = params[:productproduct_id]
 	cart = Cart.where(customer_id: current_user.id).last
 	# cart_item = CartItem.new
 	cart_item = CartItem.new
-	cart_item.attributes = {product_id: params[:product_id], cart_id: cart.id, user_id: current_user.id}
+	cart_item.attributes = {productproduct_id: params[:productproduct_id], cartcart_id: cart.id}
 	# cart_item = CartItem.new(cart_item_params)
 	# cart_item.product_id = product.id
 	# cart_item.cart_id = cart.id

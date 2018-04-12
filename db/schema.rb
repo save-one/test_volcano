@@ -10,23 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411071907) do
+ActiveRecord::Schema.define(version: 20180412114420) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "purchase_id"
-    t.integer "product_id"
+    t.integer "product_id_id"
     t.integer "sale"
     t.boolean "cart_item_flg"
     t.integer "price"
-    t.integer "user_id"
+    t.integer "cart_id_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cart_id"
+    t.integer "cartcart_id"
+    t.integer "productproduct_id"
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["cart_id_id"], name: "index_cart_items_on_cart_id_id"
+    t.index ["cartcart_id"], name: "index_cart_items_on_cartcart_id"
+    t.index ["product_id_id"], name: "index_cart_items_on_product_id_id"
+    t.index ["productproduct_id"], name: "index_cart_items_on_productproduct_id"
   end
 
   create_table "carts", force: :cascade do |t|
     t.integer "customer_id"
-    t.boolean "flg"
+    t.boolean "cart_flg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,6 +80,20 @@ ActiveRecord::Schema.define(version: 20180411071907) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "name_sei"
+    t.string "name_mei"
+    t.string "name_kana_sei"
+    t.string "name_kana_mei"
+    t.date "birthday"
+    t.string "sex"
+    t.integer "postal_code"
+    t.string "region"
+    t.string "street"
+    t.string "street_bunch"
+    t.string "room_no"
+    t.integer "phone"
+    t.string "credit_card"
+    t.boolean "user_flg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
